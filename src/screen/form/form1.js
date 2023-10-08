@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
+import { buttoncolor } from '../../const/const';
 const IncomeSelectionScreen = () => {
     const [selectedIncome, setSelectedIncome] = useState(null);
-
+    const navigation = useNavigation()
     const incomes = [
         'Upto ₹3 Lacs',
         '₹3 - ₹4 Lacs',
@@ -14,7 +15,7 @@ const IncomeSelectionScreen = () => {
 
     return (
         <View style={styles.container}>
-                     <TouchableOpacity style={styles.backButtonContainer}>
+                           <TouchableOpacity style={styles.backButtonContainer} onPress={()=>navigation.goBack()}>
                     <Text style={styles.backArrow}>{"<"}</Text>
                 </TouchableOpacity>
             <View style={styles.header}>
@@ -33,7 +34,7 @@ const IncomeSelectionScreen = () => {
                     </TouchableOpacity>
                 ))}
             </View>
-            <TouchableOpacity style={styles.continueButton}>
+            <TouchableOpacity style={styles.continueButton} onPress={()=>{navigation.navigate('BankSelection')}}>
                 <Text style={styles.continueText}>Continue</Text>
             </TouchableOpacity>
         </View>
@@ -50,11 +51,11 @@ const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 30,
+        marginBottom: 10,
     },
     backButtonContainer: {
         borderWidth: 1,
-        borderColor: '#E0E0E0',
+        borderColor: buttoncolor,
         borderRadius: 5,
         padding: 5,
         width:40,
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     },
     backArrow: {
         fontSize: 24,
-        color: '#FF6300',
+        color: buttoncolor,
         textAlign:'center'
     },
     title: {
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     },
     line: {
         height: 2,
-        backgroundColor: '#FF6300',
+        backgroundColor: buttoncolor,
         marginBottom: 30,
         alignSelf: 'flex-start',
         width: '30%',
@@ -92,14 +93,14 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     selectedOption: {
-        borderColor: '#FF6300',
+        borderColor: buttoncolor,
     },
     selectedOptionText: {
-        color: '#FF6300',
+        color: buttoncolor,
         fontWeight: 'bold',
     },
     continueButton: {
-        backgroundColor: '#FF6300',
+        backgroundColor: buttoncolor,
         padding: 15,
         borderRadius: 5,
     },

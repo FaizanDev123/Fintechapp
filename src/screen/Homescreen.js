@@ -9,10 +9,11 @@ import { buttoncolor } from '../const/const';
 const HomeScreen = () => {
 
     const productsCreditLoan = [
-        { name: 'Credit Score', icon: creditcard },
-        { name: 'Personal Loan', icon: creditcard },
-        { name: 'Micro Loan', icon: creditcard },
+        { name: 'Personal Loans', icon: creditcard },
+        { name: 'Micro Loans', icon: creditcard },
         { name: 'Business Loan', icon: creditcard },
+        { name: 'Car Loan', icon: creditcard },
+
     ];
 
     const productsInsurance = [
@@ -40,6 +41,8 @@ const HomeScreen = () => {
 </View>
 
             <Text style={styles.sectionHeader}>Credit-Loan</Text>
+            <View style={styles.line} />
+
             <View style={styles.products}>
                 {productsCreditLoan.map(product => (
                     <View key={product.name} style={styles.productBox}>
@@ -51,6 +54,8 @@ const HomeScreen = () => {
 
             {/* Insurance Section */}
             <Text style={styles.sectionHeader}>Insurance and Other Products</Text>
+            <View style={styles.line} />
+
             <View style={styles.products}>
                 {productsInsurance.map(product => (
                     <View key={product.name} style={styles.productBox}>
@@ -61,6 +66,8 @@ const HomeScreen = () => {
 
             </View>
                         <Text style={styles.sectionHeader}>Insurance and Other Products</Text>
+                        <View style={styles.line} />
+
             <View style={styles.products}>
                 {productsInsurance.map(product => (
                     <View key={product.name} style={styles.productBox}>
@@ -96,6 +103,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#F8F8F8',
         padding: 10,
     
+    },
+    line: {
+        height: 2,
+        backgroundColor: buttoncolor,
+        marginBottom: 0,
+        alignSelf: 'flex-start',
+        width: '15%',
     },
     banner: {
         width: '100%',

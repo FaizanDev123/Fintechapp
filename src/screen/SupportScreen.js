@@ -12,7 +12,7 @@ const ContactScreen = () => {
             <View style={styles.infoBox}>
                 <Image source={emailIcon} style={styles.icon} />
                 <Text style={styles.title}>Email:</Text>
-                <Text style={styles.info}>care@paisabazaar.com</Text>
+                <Text style={styles.info}>support@paisadekho.com</Text>
                 <Text style={styles.description}>
                     For queries related to loans, credit cards or in case of any general enquiries
                 </Text>

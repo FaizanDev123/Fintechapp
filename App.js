@@ -10,14 +10,10 @@ import OTPScreen from './src/screen/authScreen/OtpScreen';
 import { Ionicons } from '@expo/vector-icons'; // Import the icons
 import ContactScreen from './src/screen/SupportScreen';
 import IncomeSelectionScreen from './src/screen/form/form1';
-function MoreScreen() {
-  return (
-    <View style={styles.container}>
-      <Text>More Screen</Text>
-    </View>
-  );
-}
-
+import BankSelectionScreen from './src/screen/form/form2';
+import EmploymentDetailsScreen from './src/screen/form/form3';
+import EmploymentType from './src/screen/form/form4';
+import RegistrationScreen from './src/screen/authScreen/RegisterScreen';
 const Tab = createBottomTabNavigator();
 
 function MainApp() {
@@ -74,6 +70,10 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="MainApp" component={MainApp} />
         <Stack.Screen name="otpscreen" component={OTPScreen} />
+        <Stack.Screen name="BankSelection" component={BankSelectionScreen} />
+        <Stack.Screen name="employeSelection" component={EmploymentDetailsScreen} />
+        <Stack.Screen name="employeetype" component={EmploymentType} />
+        <Stack.Screen name="signup" component={RegistrationScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>

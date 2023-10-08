@@ -5,6 +5,7 @@ import CountryPicker from 'react-native-country-picker-modal';
 import logo from "../../assest/Paisadekho_logo.png";
 import { buttoncolor } from '../../const/const';
 import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from '@gorhom/bottom-sheet';
 
 function LoginScreen() {
   const [countryCode, setCountryCode] = useState('IN');
@@ -42,6 +43,7 @@ function LoginScreen() {
         onChangeText={setPhoneNumber}
       />
       <Button title="Login with OTP" onPress={handleSendOTP} buttonStyle={styles.button} />
+      <TouchableOpacity onPress={()=>navigation.navigate('signup')}><Text style={{textAlign:'center'}}>Create New Account <Text style={{color:buttoncolor}}>signup</Text></Text></TouchableOpacity>
       <View style={styles.bottomTextContainer}>
         <Text style={styles.bottomText}>
           By continuing, you agree with our <Text style={{ color: buttoncolor }}>privacy policy</Text>, credit Report Terms of use, and <Text style={{ color: buttoncolor }}> Terms of use.</Text>
